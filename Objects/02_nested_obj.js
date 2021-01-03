@@ -1,40 +1,34 @@
-const newnames = 'apple.inc';
-const age = 20;
-let random = 'random-value';
+// nested object
 
-const person = {
-  name: 'john doe',
-  age: age,
-  company: {
-    name: newnames,
-    job: 'front end developer',
+const newHobby = ['run', 'basket', 'football'];
+const notRandom = 'Dumpak dug dug deeerrr';
+const john = {
+  firstName: 'john',
+  status: {
+    married: false,
+    student: true,
   },
-  married: true,
-  expert: {
-    skills: ['html', 'css3', 'js'],
-    hobby: {
-      books: ['onepiece', 'shokugeki no souma'],
+  skills: {
+    technology: {
+      webdesign: ['html', 'css', 'figma', 'javascript'],
+      backend: ['nodejs', 'django'],
     },
   },
-  'random-value': 'jobss!',
+  hobby: {
+    manga: {
+      read: ['onepiece', 'sololeveling'],
+      sport: newHobby,
+    },
+  },
+  randomhere: notRandom,
 };
 
-// acces all obj
-// console.log(person);
-
-// *** acces on nested
-// front end developer
-console.log(person.company.job);
-// [ 'html', 'css3', 'js' ]
-console.log(person.expert.skills);
-// shokugeki no souma
-console.log(person.expert.hobby.books[1]);
-console.log('random-value');
-// apple.inc
-console.log(person.company.name);
-console.log(person['random-value']);
-// { name: 'apple.inc', job: 'front end developer' }
-// still same with person.company
-console.log(person['company']);
-
-console.log(person.age);
+// access
+console.log(john.status.married); //false
+console.log(john.status.skills); //undefined
+console.log(
+  john.skills.technology.webdesign[john.skills.technology.webdesign.length - 1]
+); //javascript
+console.log(john.hobby.manga.read); //['onepiece', 'sololeveling'];
+console.log(john.hobby.manga.sport); //[ 'run', 'basket', 'football' ]
+console.log(john.randomhere); //random
