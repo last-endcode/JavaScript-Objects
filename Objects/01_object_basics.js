@@ -1,31 +1,22 @@
-const person = {
-  name: 'john doe',
-  age: 25,
-  married: true,
-  siblings: ['anna', 'peter'],
-  greet: function (name) {
-    return `hello, my name is ${name}`;
-  },
-  sayHello(name) {
-    console.log(`hello, my name is ${name}`);
+// create object
+const wiwa = {
+  firstName: 'wiwa',
+  lastName: 'dncode',
+  married: false,
+  skills: ['html', 'css', 'javascript', 'linux'],
+  sayHi: function () {
+    console.log(`hello....`);
   },
 };
 
-// acces obj u can use dot notation
-// console.log(person.name); //john doe
-// change name john doe be peter walker
-person.name = 'peter walker';
-// console.log(person.name);
-
-// print all object
-// console.log(person);
-// access object with function parameter
-// console.log(person.greet('wiwa'));
-
-//acces obj on array
-console.log(person.siblings[person.siblings.length - 1]);
-
-// delete property
-let siblings = delete person.siblings;
-console.log(siblings); //true its succesfully for delete
-console.log(person);
+// *** For print use object dot notation
+console.log(wiwa.firstName); // wiwa
+console.log(`Hello ${wiwa.firstName} ${wiwa.lastName}`); //Hello wiwa dncode
+// *** Re-assign object
+wiwa.firstName = 'john';
+console.log(`Hello ${wiwa.firstName}`); //Hello john
+// *** print object with array
+console.log(wiwa.skills[0]); //html
+console.log(wiwa.skills); // [ 'html', 'css', 'javascript', 'linux' ]
+console.log(wiwa.skills.length); // 4 for knowing all sum on array
+console.log(wiwa.skills.length - 1); // 3 for knowing the last array
