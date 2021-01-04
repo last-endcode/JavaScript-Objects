@@ -1,31 +1,47 @@
-// all objects in JS have access to constructor
-// property that returuns a constructor function that created it
-// built in constructor function
-// arrays and functions are object in JS
+/* All Objects in JS have access to constructor
+property that returns a constructor function that created it
+// built in constructor functions
+// arrays and functions are objects in javascript
+*/
 
-function person(firstName, lastName) {
+// create constructor function
+function MemberSHP(firstName, lastName) {
+  // * use this for new instance & assign use param
   this.firstName = firstName;
   this.lastName = lastName;
   this.fullName = function () {
-    console.log(
-      `my full name is ${this.firstName} ${this.lastName}, i love JS`
-    );
+    console.log(`Hello ${this.firstName} ${this.lastName}`);
   };
+  // console.log(this);
 }
 
-// here example constructor function
-// *** obj, array, function
+// create blue print use NEW keyword
+const lutfy = new MemberSHP('mugiwara no', 'lutfy');
 
-const john = new person('john', 'doe');
-// console.log(john.constructor);
+// check constructor property
+console.log(lutfy.constructor);
+const thisArray = [];
+console.log(thisArray.constructor);
+const thisObj = {};
+console.log(thisObj.constructor);
+const thisFunc = function () {};
+console.log(thisFunc.constructor);
 
-const bob = {};
-console.log(bob.constructor);
-const list = [];
-console.log(list.constructor);
-const peter = function () {};
-console.log(peter);
+/* output: 
+ƒ MemberSHP(firstName, lastName) {
+  // * use this for new instance & assign use param
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.fullName = function () {
+    console.log(`Hello $…
 
-// example here can new instance will same constructor
-const jane = new john.constructor('jane', 'edward');
-jane.fullName();
+ƒ Array() { [native code] }
+ƒ Object() { [native code] }
+ƒ Function() { [native code] }
+
+*/
+
+// dan sekarang kita bisa menggunakan constructor
+// dgn nilai yang sudah ada
+const zoro = new lutfy.constructor('rorona', 'zoro');
+zoro.fullName(); //Hello rorona zoro

@@ -1,5 +1,7 @@
+// first create object
 const counter = {
   count: 0,
+  // function
   increment() {
     console.log(this);
     this.count++;
@@ -7,15 +9,20 @@ const counter = {
   },
 };
 
+// select item
 const btn = document.querySelector('.increment');
 
-// fail will NaN
+//  WRONG!
 // btn.addEventListener('click', counter.increment);
+// // ketika diklik output:
+// // <button class="increment">increment</button>
+// // but with count NaN is not solution
 
-// solution you can use bind but issue can't removeEvent
 // btn.addEventListener('click', counter.increment.bind(counter));
+// // it's work use bind ketika diklik menghasilkan value for count
+// // tapi tidak bisa meremove still issue
 
-// solution
+//  *** SOLUTION
 const increment = counter.increment.bind(counter);
 btn.addEventListener('click', increment);
-btn.removeEventListener('click', increment);
+// btn.removeEventListener('click', increment);

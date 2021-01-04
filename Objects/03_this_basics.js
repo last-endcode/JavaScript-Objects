@@ -1,10 +1,13 @@
-const shp_list = {
-  firstName: 'mugiwara no',
-  lastName: 'luffy',
-  sayToHello: function () {
-    console.log(`Hello captain ${this.firstName} ${this.lastName}`);
+// this basics
+// point from objects
+
+const mugiwara = {
+  name: 'lutfy',
+  memberShp: true,
+  sayHi: function () {
+    console.log(`hello ${this.name} your ${this.memberShp} from SHP`);
   },
 };
 
-// this keyword get value object dari dalam object itu sndiri
-shp_list.sayToHello();
+mugiwara.sayHi(); //hello lutfy your true from SHP
+console.log(this); // here {} this windows

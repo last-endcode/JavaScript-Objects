@@ -1,22 +1,17 @@
-const john = {
-  name: 'john',
-  age: 25,
+const lutfy = {
+  name: 'mugiwara',
+  last: 'no lutfy',
 };
 
-const susy = {
-  name: 'susy',
-  age: 47,
+const zoro = {
+  name: 'rorona',
+  last: 'zoro',
 };
 
-function greeting(city, country) {
-  console.log(
-    `Hi, ${this.name} your age is ${this.age} live in ${city}, ${country}`
-  );
+function memberSHP(country, city) {
+  console.log(`Hello ${this.name} ${this.last} from ${country}, ${city}`);
 }
 
-//  **** BIND ****
-//  assign , use lateer, arguments, - list of items
-
-const infoSusy = greeting.bind(susy, 'paris', 'france');
-// and now u can use peterparker for invoke
-infoSusy();
+// *** BIND, assign it, and use later it
+const zorronew = memberSHP.bind(zoro, 'tokyo', 'wano');
+zorronew(); // Hello rorona zoro from tokyo, wano

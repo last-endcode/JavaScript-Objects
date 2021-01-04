@@ -1,46 +1,28 @@
-// blue print
-// factory function and constructor functions
-// factory functions for return obj & based on parameter
-//
+// A factory function is any function which is not a class or constructor that returns a (presumably new) object.
+// In JavaScript, any function can return an object. When it does so without the new keyword,
+// it’s a factory function.
 
-//  *** remember heres not dynamic
-// here if add text i love js for john
-// its good but how for bobby, or 3000 obj with name?
-// for solution you need factory functions
-
-// const john = {
-//   firstName: 'john',
-//   lastName: 'doe',
-//   fullName: function () {
-//     console.log(`my full name is ${this.firstName} ${this.lastName}
-//     i love js`);
-//   },
-// };
-
-// const bob = {
-//   firstName: 'bob',
-//   lastName: 'walker',
-//   fullName: function () {
-//     console.log(`my full name is ${this.firstName} ${this.lastName}`);
-//   },
-// };
-
-// ***** Factory Function
-function createPerson(firstName, lastName) {
+// create function
+function createMemberShp(firstName, lastName) {
+  // remember use return here
   return {
     firstName: firstName,
     lastName: lastName,
     fullName: function () {
-      console.log(`My name is ${this.firstName} ${this.lastName} i love JS`);
+      console.log(`Hello ${this.firstName} ${this.lastName}`);
     },
   };
 }
 
-const john = createPerson('john', 'doe');
-john.fullName();
-const bob = createPerson('bob', 'walker');
-bob.fullName();
-const susy = createPerson('susy', 'kane');
-susy.fullName();
-const kelly = createPerson('kelly', 'jane');
-kelly.fullName();
+// dont forget field argument cz function use param
+const lutfy = createMemberShp('mugiwara no', 'luttfy');
+lutfy.fullName(); // Hello mugiwara no luttfy
+const zoro = createMemberShp('Roronoa', 'Zorro');
+zoro.fullName(); //Hello Roronoa Zorro
+
+/*****
+Cara ini lebih efektif dibandingkan harus membuat object
+seperti membuat object lutfy terlebih dahulu, dilanjut
+dengan object zoro terlebih dahulu jika harus membuat 3000 lebih 
+tidak efektif juga jadi factory funciton adalah solusinya..
+******/

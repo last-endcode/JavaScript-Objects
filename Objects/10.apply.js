@@ -1,31 +1,25 @@
-// call & apply
-
-const john = {
-  name: 'john',
-  age: 25,
+const lutfy = {
+  name: 'mugiwara',
+  last: 'no lutfy',
 };
 
-const susy = {
-  name: 'susy',
-  age: 27,
+const zoro = {
+  name: 'rorona',
+  last: 'zoro',
 };
 
-function greeting(city, country) {
-  console.log(this);
-  console.log(
-    `Hello ${this.name} your age is ${this.age} and your live in ${city}, ${country}`
-  );
+function memberSHP(country, city) {
+  console.log(`Hello ${this.name} ${this.last} from ${country}, ${city}`);
 }
 
-// here different call & apply
-// call for argument is ***list argument***
-greeting.call(john, 'bandung', 'West in java');
-greeting.call(susy, 'bandung', 'West in java');
-greeting.call({ name: 'natsui', age: 42 }, 'tokyo', 'japan');
-// *** output
-// Hello john your age is 25 and your live in bandung, West in java
-// Hello susy your age is 27 and your live in bandung, West in java
+// different call & apply
+/*
+memberSHP.call(lutfy, 'japan', 'bandung');
+memberSHP.call(zoro, 'japan', 'wano');
+memberSHP.call({ name: 'sanji', last: 'vinsmoke' }, 'japan', 'master chef'); 
+*/
 
-// apply for argument is ***ARRAY***
-greeting.apply({ name: 'peter', age: 30 }, ['amsterdam', 'Netherlands']);
-greeting.apply(susy, ['riyadh', 'saudi arabian']);
+// apply use array []
+memberSHP.apply(lutfy, ['japan', 'bandung']);
+memberSHP.apply(zoro, ['japan', 'wano']);
+memberSHP.apply({ name: 'sanji', last: 'vinsmoke' }, ['japan', 'master chef']);

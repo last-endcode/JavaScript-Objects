@@ -1,33 +1,29 @@
-// call method,
 // you can write a method that can be used on different objects.
 
-const john = {
-  name: 'john',
-  age: 25,
-  greeting: function () {
-    console.log(this);
-    console.log(`My name is ${this.name} and my age is ${this.age}`);
-  },
-};
-
-const susy = {
-  name: 'susy',
-  age: 30,
-};
-
-// u can use two option: like function this
-// or use object
-function greeting() {
-  console.log(this);
-  console.log(`Your name is ${this.name} and age is ${this.age}`);
+function memberShp(city, country) {
+  return `Hello ${this.name} ${this.last} your from SHP from ${city} ${country}`;
 }
 
-greeting.call(susy);
-// Your name is susy and age is 30
+const lutfy = {
+  name: 'mugiwara',
+  last: 'no lutfy',
+};
 
-// or you can use this one
-john.greeting.call(susy);
-// My name is susy and my age is 30
+const zoro = {
+  name: 'rorona',
+  last: 'zoro',
+};
 
-// and for create again use argument
-john.greeting.call({ name: 'peter walker', age: 68 });
+// call function.call(targetobject)
+let leader = memberShp.call(lutfy);
+console.log(leader); //Hello mugiwara no lutfy your from SHP
+let deputy_leader = memberShp.call(zoro);
+console.log(deputy_leader); //Hello rorona zoro your from SHP
+
+//  **** Use argument
+// bisa ditambahkan dalam function memberShp
+// semisal city, country
+leader = memberShp.call(lutfy, 'batak', 'indonesia');
+console.log(leader); //
+deputy_leader = memberShp.call(zoro, 'bandung', 'japan');
+console.log(deputy_leader); // Hello rorona zoro your from SHP from bandung japan
