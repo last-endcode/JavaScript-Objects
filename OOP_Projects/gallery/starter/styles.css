@@ -209,7 +209,7 @@ Modal
 .prev-btn {
   position: absolute;
   top: 10rem;
-  right: -2.5rem;
+  right: -3rem;
   transform: translateY(-50%);
   background: transparent;
   font-size: 2rem;
