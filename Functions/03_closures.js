@@ -3,23 +3,23 @@
 // from an innner function
 // make private variables with closures
 
-function shpName(firstName, lastName) {
-  let member = 'SHP';
-  function addName(balance) {
-    console.log(
-      `Hello member ${member} : ${firstName} ${lastName} with ${
-        balance * 10000000
-      }`
-    );
+function outer() {
+  // membuat variable just for function
+  let privateVar = 'secret';
+  function inner() {
+    console.log(`hello world is ${privateVar}`);
   }
-  return addName;
+  // add return
+  return inner;
+  inner(); //invoke
 }
 
-// invoke, and use this () for calling inner function
-shpName('mugiwara', 'no lutfy')(100000000);
+// console.log(privateVar); //error cz not defined
 
-// create 2 instance obj
-const zoro = new shpName('rorona', 'zoro');
-const sanji = new shpName('sanji', 'vinsmoke');
-zoro(4000000);
-sanji(500000);
+// menggunakan () tuk memanggil juga innner
+// jika tanpa () tidak akan menghasilkan apapun
+outer()(); // hello world
+
+// atau mengguakan variable tuk memanggil innner
+// const value = outer();
+// value(); // will error solution use return inner function
