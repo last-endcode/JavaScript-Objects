@@ -1,9 +1,5 @@
-// buat obj
-const people = [
-  { name: 'john', job: 'developer' },
-  { name: 'boby', job: 'designer' },
-  { name: 'jane', job: 'the boss' },
-];
+// import file dari export ke sini
+import { people, random } from './utils/data.js';
 
 const container = document.querySelector('.container');
 const btn = document.querySelector('.btn');
