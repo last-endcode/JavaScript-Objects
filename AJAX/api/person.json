@@ -1,0 +1,6 @@
+[
+  { "name": "john", "job": "developer" },
+  { "name": "jane", "job": "designer" },
+  { "name": "peter", "job": "the boss" },
+  { "name": "kelly", "job": "HR" }
+]
