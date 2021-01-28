@@ -3,16 +3,20 @@ const content = document.querySelector('.content');
 const URL = 'https://api.chucknorris.io/jokes/random';
 const img = document.querySelector('.container img');
 
-btn.addEventListener('click', () => {
-  fetch(URL)
-    // disini response di peroleh karena data.json
-    .then((data) => data.json())
-    .then((response) => showJoke(response));
+btn.addEventListener('click', async () => {
+  // asyncawait
+  try {
+    const data = await fetch(URL);
+    const response = await data.json();
+    showJoke(response);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 // function tuk filter only joke
 // sehingga tidak perlu membutuhkan JSON.parse
-// karena sudah ada data.json dan 
+// karena sudah ada data.json dan
 // fungsi ini tinggal membuat obj destructingnya
 function showJoke({ value: joke }) {
   img.classList.add('shake-img');
@@ -23,12 +27,3 @@ function showJoke({ value: joke }) {
     img.classList.remove('shake-img');
   }, random);
 }
-
-/* NOTE
-btn.addEventListener('click', () => {
-  fetch(URL)
-  // disini response di peroleh menghasilkan string json karena data.json
-    .then((data) => data.json())
-    .then((response) => console.log(response));
-});
-*/
